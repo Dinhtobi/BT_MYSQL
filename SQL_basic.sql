@@ -33,12 +33,12 @@ where customer.cust_id = '15';
 select  * from customer
  where customer.CUST_TYPE_CD = 'I'  limit 3; 
 
-/* Select đếm các record có CUST_TYPE_CD = 'I'*/
-select count(CUST_ID) from customer 
+/* Select đếm số record có CUST_TYPE_CD = 'I'*/
+select count(CUST_TYPE_CD) from customer 
 where customer.CUST_TYPE_CD = 'I';
 
 /* Select giá trị trung bình CUST_ID với CUST_TYPE_CD = 'I' */
-select AVG(CUST_ID) from customer 
+select AVG(cust_id) from customer 
 where customer.CUST_TYPE_CD = 'I';
 
 /* Select tổng các CUST_ID với CUST_TYPE_CD = 'I' */
@@ -68,17 +68,4 @@ order by count(c.cust_id) desc;
 /* Loại bỏ giá trị trùng lặp*/
 select distinct  c.city from customer as c;
 
-/* gộp 2 bảng và lấy record có CUST_ID giống nhau*/
-select * from customer as c 
-inner join officer as o 
-on c.CUST_ID = o.CUST_ID;
 
-/* gộp 2 bảng và lấy record có CUST_ID giống nhau và record có CUST_ID khác nhau thì chỉ lấy bảng 1 bằng 2 null*/
-select * from customer as c 
-left join officer as o 
-on c.CUST_ID = o.CUST_ID;
-
-/* gộp 2 bảng và lấy record có CUST_ID giống nhau và record có CUST_ID khác nhau thì chỉ lấy bảng 2 bằng 1 null*/
-select * from customer as c 
-right join officer as o 
-on c.CUST_ID = o.CUST_ID;

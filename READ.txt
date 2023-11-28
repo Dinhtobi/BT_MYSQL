@@ -1,3 +1,3 @@
 // chạy CSDL.sql để tạo cơ sở dữ liệu
 
-// chạy các câu lệnh trong SQL_Basic.sql để thực hiện query.
+// chạy các câu lệnh trong SQL_Basic.sql và SQL_Advance.sql để thực hiện query.
