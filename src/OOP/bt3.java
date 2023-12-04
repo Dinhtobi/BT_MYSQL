@@ -41,7 +41,7 @@ public class bt3 {
 				System.out.print("\n Thoát?");
 				System.out.print("\nẤn bất kỳ để thoát");
 				String back1 = sc.nextLine();
-				continue;
+				break;
 			}
 			case 2:{
 				System.out.println("Tiền thuế các xe");
@@ -51,7 +51,7 @@ public class bt3 {
 				);
 				System.out.print("\nẤn bất kỳ để thoát");
 				String back2 = sc.nextLine();
-				continue;
+				break;
 			}
 			default:
 				tieptuc = false ;

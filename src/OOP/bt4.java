@@ -26,12 +26,12 @@ public class bt4 {
 				String name =  sc.nextLine();
 				if(maps.containsKey(name)) {
 					Giaodienchinh(name);
-					continue;
+					break;
 				}else {
 					System.out.println("Sai tên tài khoản");
 					System.out.println("Nhấn bất kỳ để thoát");
 					sc.nextLine();
-					continue;
+					break;
 				}
 				
 			}
@@ -46,7 +46,7 @@ public class bt4 {
 				System.out.println("Đăng ký thành công");
 				System.out.println("Nhấn bất kỳ để thoát");
 				sc.nextLine();
-				continue;
+				break;
 			}
 			default:{
 				tieptuc = false ;
@@ -74,7 +74,7 @@ public class bt4 {
 				account.tostring();
 				System.out.println("Nhấn bất kỳ để thoát");
 				sc.nextLine();
-				continue;
+				break;
 			}
 			case 2 :{
 				System.out.println("Thông tin tài khoản của mọi người");
@@ -82,7 +82,7 @@ public class bt4 {
 				maps.forEach((keyname , acount) -> System.out.println(acount.getAccountId() + "\t\t" + acount.getName() + "\t" + acount.getMoney()));
 				System.out.println("Nhấn bất kỳ để thoát");
 				sc.nextLine();
-				continue;
+				break;
 			}
 			case 3:{
 				System.out.println("Nhập số tiền nạp");
@@ -91,7 +91,7 @@ public class bt4 {
 				System.out.println(account.Naptien(tiennap));;
 				System.out.println("Nhấn bất kỳ để thoát");
 				sc.nextLine();
-				continue;
+				break;
 			}
 			case 4:{
 				System.out.println("Nhập số tiền rút");
@@ -100,7 +100,7 @@ public class bt4 {
 				System.out.println(account.Ruttien(tienrut));;
 				System.out.println("Nhấn bất kỳ để thoát");
 				sc.nextLine();
-				continue;
+				break;
 			}
 			case 5:{
 				System.out.println("Nhập tên người nhận");
@@ -117,14 +117,14 @@ public class bt4 {
 				
 				System.out.println("Nhấn bất kỳ để thoát");
 				sc.nextLine();
-				continue;
+				break;
 			}
 			case 6:{
 				System.out.println("Tiền đáo hạn nhận được");
 				System.out.println(account.DaoHan());;
 				System.out.println("Nhấn bất kỳ để thoát");
 				sc.nextLine();
-				continue;
+				break;
 			}
 			default:
 				tieptuc = false ;
