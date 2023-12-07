@@ -1,4 +1,4 @@
-package File;
+package File.operationTxt;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -6,7 +6,7 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class WriteFile {
+public class WriteFileTxt {
 	
 	public static void ghinoifile() {
 		try {

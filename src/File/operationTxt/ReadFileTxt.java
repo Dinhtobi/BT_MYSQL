@@ -1,4 +1,4 @@
-package File;
+package File.operationTxt;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class ReadFile {
+public class ReadFileTxt {
 	public static void main(String[] args) {
 		File file = new File("G:\\Job\\BT_JAVA\\upload\\test.txt");
 		FileInputStream filein = null ;
