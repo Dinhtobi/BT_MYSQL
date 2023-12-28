@@ -17,21 +17,27 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import com.assignment.java.Batch.Processor.ContractProcessor;
 import com.assignment.java.Batch.Processor.CsvExportProcessor;
 import com.assignment.java.Batch.Processor.CsvImportProcessor;
 import com.assignment.java.Batch.Processor.RemoveProcessor;
+import com.assignment.java.Batch.Reader.ContractReader;
 import com.assignment.java.Batch.Reader.CsvExportReader;
 import com.assignment.java.Batch.Reader.CsvImportReader;
 import com.assignment.java.Batch.Reader.RemoveReader;
+import com.assignment.java.Batch.Writer.ContractWriter;
 import com.assignment.java.Batch.Writer.CsvImportWriter;
 import com.assignment.java.Batch.Writer.RemoveWriter;
+import com.assignment.java.DTO.Model.PostDTO;
+import com.assignment.java.DTO.Payload.Request.CsvRequest;
+import com.assignment.java.DTO.Payload.Response.CsvResponse;
 import com.assignment.java.Entities.Product;
-import com.assignment.java.Payload.Request.CsvRequest;
-import com.assignment.java.Payload.Response.CsvResponse;
 import com.assignment.java.Repository.CategoryRepository;
+import com.assignment.java.Repository.PostRepository;
 import com.assignment.java.Repository.ProductRepository;
 import com.assignment.java.Repository.UserRepository;
 import com.assignment.java.Service.Impl.EmailService;
+import com.assignment.java.Utils.ContractUtil;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -52,8 +58,15 @@ public class BatchConfig {
 	private UserRepository userRepository;
 	
 	@Autowired
+	private PostRepository postRepository;
+	
+	@Autowired
 	private EmailService emailService;
 
+	@Autowired
+	private ContractUtil contractUtil;
+	
+	
 	@Bean(name = "job-batch")
 	public Job job(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
 		return new JobBuilder("deleteData", jobRepository).start(step1(jobRepository, transactionManager))
@@ -107,6 +120,20 @@ public class BatchConfig {
 	public Step stepExport(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
 		return new StepBuilder("stepExport", jobRepository).<Product, CsvResponse>chunk(5, transactionManager)
 				.reader(new CsvExportReader(dataSource)).processor(new CsvExportProcessor()).writer(itemWriter())
+				.build();
+	}
+	
+	
+	@Bean(name = "job-blockChain")
+	public Job jobBlockChain(JobRepository jobRepository , PlatformTransactionManager transactionManager) {
+		return new JobBuilder("jobBlockChain", jobRepository).start(stepBlockChain(jobRepository, transactionManager))
+				.preventRestart().build();
+	}
+	
+	@Bean
+	public Step stepBlockChain(JobRepository jobRepository , PlatformTransactionManager transactionManager) {
+		return new StepBuilder("stepBlockChain2" , jobRepository).<PostDTO, PostDTO> chunk(1, transactionManager)
+				.reader(new ContractReader(contractUtil)).processor(new ContractProcessor()).writer(new ContractWriter(postRepository))
 				.build();
 	}
 }

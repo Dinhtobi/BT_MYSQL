@@ -10,9 +10,9 @@ import org.springframework.batch.item.file.mapping.DefaultLineMapper;
 import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
 import org.springframework.core.io.FileSystemResource;
 
+import com.assignment.java.DTO.Payload.Request.CsvRequest;
 import com.assignment.java.Entities.Product;
 import com.assignment.java.Mapper.CsvProductMapper;
-import com.assignment.java.Payload.Request.CsvRequest;
 
 public class CsvImportReader implements ItemReader<CsvRequest> {
 

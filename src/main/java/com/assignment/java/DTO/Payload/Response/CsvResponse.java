@@ -1,6 +1,6 @@
-package com.assignment.java.Payload.Response;
+package com.assignment.java.DTO.Payload.Response;
 
-import com.assignment.java.Payload.Request.CsvRequest;
+import com.assignment.java.DTO.Payload.Request.CsvRequest;
 
 import lombok.AllArgsConstructor;
 

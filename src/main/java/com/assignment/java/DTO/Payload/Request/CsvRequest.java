@@ -1,4 +1,4 @@
-package com.assignment.java.Payload.Request;
+package com.assignment.java.DTO.Payload.Request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

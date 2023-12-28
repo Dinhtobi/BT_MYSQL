@@ -20,9 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.assignment.java.DTO.Payload.Request.LoginRequest;
+import com.assignment.java.DTO.Payload.Request.RegisterRequest;
 import com.assignment.java.Exception.BadRequestException;
-import com.assignment.java.Payload.Request.LoginRequest;
-import com.assignment.java.Payload.Request.RegisterRequest;
 import com.assignment.java.Service.IUserService;
 
 import jakarta.mail.MessagingException;

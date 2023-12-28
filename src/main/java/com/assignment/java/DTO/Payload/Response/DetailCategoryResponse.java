@@ -1,4 +1,4 @@
-package com.assignment.java.Payload.Response;
+package com.assignment.java.DTO.Payload.Response;
 
 import java.util.List;
 

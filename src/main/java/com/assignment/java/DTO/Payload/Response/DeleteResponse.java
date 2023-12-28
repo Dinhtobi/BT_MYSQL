@@ -1,11 +1,9 @@
-package com.assignment.java.Payload.Response;
+package com.assignment.java.DTO.Payload.Response;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 
-@Data
 @AllArgsConstructor
-public class RegisterResponse {
+public class DeleteResponse {
 
 	private String notify ;
 	

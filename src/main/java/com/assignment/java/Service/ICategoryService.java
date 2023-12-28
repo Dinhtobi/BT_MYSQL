@@ -2,11 +2,11 @@ package com.assignment.java.Service;
 
 import java.util.Date;
 
-import com.assignment.java.Payload.Request.CategoryRequest;
-import com.assignment.java.Payload.Response.CategoryResponse;
-import com.assignment.java.Payload.Response.DeleteResponse;
-import com.assignment.java.Payload.Response.DetailCategoryResponse;
-import com.assignment.java.Payload.Response.PageResponse;
+import com.assignment.java.DTO.Payload.Request.CategoryRequest;
+import com.assignment.java.DTO.Payload.Response.CategoryResponse;
+import com.assignment.java.DTO.Payload.Response.DeleteResponse;
+import com.assignment.java.DTO.Payload.Response.DetailCategoryResponse;
+import com.assignment.java.DTO.Payload.Response.PageResponse;
 
 public interface ICategoryService {
 

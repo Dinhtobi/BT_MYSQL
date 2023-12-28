@@ -7,11 +7,11 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.assignment.java.DTO.Payload.Response.RefreshTokenResponse;
 import com.assignment.java.Entities.RefreshToken;
 import com.assignment.java.Entities.User;
 import com.assignment.java.Exception.NotFoundException;
 import com.assignment.java.Exception.RefreshTokenException;
-import com.assignment.java.Payload.Response.RefreshTokenResponse;
 import com.assignment.java.Repository.RefreshTokenRepository;
 import com.assignment.java.Repository.UserRepository;
 import com.assignment.java.Service.IRefreshTokenService;

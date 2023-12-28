@@ -7,11 +7,11 @@ import org.springframework.batch.core.repository.JobExecutionAlreadyRunningExcep
 import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
 import org.springframework.batch.core.repository.JobRestartException;
 
+import com.assignment.java.DTO.Payload.Request.LoginRequest;
+import com.assignment.java.DTO.Payload.Request.RegisterRequest;
+import com.assignment.java.DTO.Payload.Response.RegisterResponse;
+import com.assignment.java.DTO.Payload.Response.UserResponse;
 import com.assignment.java.Entities.User;
-import com.assignment.java.Payload.Request.LoginRequest;
-import com.assignment.java.Payload.Request.RegisterRequest;
-import com.assignment.java.Payload.Response.RegisterResponse;
-import com.assignment.java.Payload.Response.UserResponse;
 
 import jakarta.mail.MessagingException;
 

@@ -1,5 +1,6 @@
 package com.assignment.java.Config;
 
+import java.io.IOException;
 import java.util.UUID;
 
 import org.springframework.batch.core.Job;
@@ -30,6 +31,10 @@ public class ScheduledConfig {
 	@Autowired
 	@Qualifier("job-batch")
 	Job processJob;
+	
+	@Autowired
+	@Qualifier("job-blockChain")
+	Job jobBlockChain;
 	@Scheduled(fixedRate = 20000)
 	public void runJob() throws JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException, JobParametersInvalidException  {
 		log.info("Run job verify");
@@ -38,4 +43,21 @@ public class ScheduledConfig {
 					jobLauncher.run(processJob, jobParameters);
 	}
 	
+	
+	@Scheduled(fixedRate = 60*1000)
+	public void listener() throws IOException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException, JobParametersInvalidException   {
+		log.info("Run contract verify");
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		
+		JobParameters jobParameters = new JobParametersBuilder()
+				.addString("contracId", UUID.randomUUID().toString()).toJobParameters();
+		jobLauncher.run(jobBlockChain, jobParameters);
+					
+	}
 }

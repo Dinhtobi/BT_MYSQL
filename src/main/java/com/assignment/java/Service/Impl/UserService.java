@@ -14,14 +14,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.assignment.java.DTO.Payload.Request.LoginRequest;
+import com.assignment.java.DTO.Payload.Request.RegisterRequest;
+import com.assignment.java.DTO.Payload.Response.RegisterResponse;
+import com.assignment.java.DTO.Payload.Response.UserResponse;
 import com.assignment.java.Entities.Role;
 import com.assignment.java.Entities.User;
 import com.assignment.java.Exception.BadRequestException;
 import com.assignment.java.Exception.NotFoundException;
-import com.assignment.java.Payload.Request.LoginRequest;
-import com.assignment.java.Payload.Request.RegisterRequest;
-import com.assignment.java.Payload.Response.RegisterResponse;
-import com.assignment.java.Payload.Response.UserResponse;
 import com.assignment.java.Repository.RoleRepository;
 import com.assignment.java.Repository.UserRepository;
 import com.assignment.java.Service.IRefreshTokenService;

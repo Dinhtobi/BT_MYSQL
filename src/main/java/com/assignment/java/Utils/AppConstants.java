@@ -13,4 +13,6 @@ public class AppConstants {
 	public static final String DEFAULT_PAGE = "0";
 	
 	public static final String DEFAULT_PAGE_SIZE = "20";
+	
+	public static String addressContract = "" ;
 }

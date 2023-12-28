@@ -12,9 +12,9 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.assignment.java.Config.FileStorageConfig;
+import com.assignment.java.DTO.Payload.Response.FileResponse;
 import com.assignment.java.Entities.File;
 import com.assignment.java.Exception.BadRequestException;
-import com.assignment.java.Payload.Response.FileResponse;
 import com.assignment.java.Repository.FileRepository;
 import com.assignment.java.Service.IFileService;
 

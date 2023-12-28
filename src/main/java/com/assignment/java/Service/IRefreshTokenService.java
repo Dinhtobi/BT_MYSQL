@@ -1,7 +1,7 @@
 package com.assignment.java.Service;
 
+import com.assignment.java.DTO.Payload.Response.RefreshTokenResponse;
 import com.assignment.java.Entities.RefreshToken;
-import com.assignment.java.Payload.Response.RefreshTokenResponse;
 
 public interface IRefreshTokenService {
 	String createOrUpdateRefreshToken(int user_id);

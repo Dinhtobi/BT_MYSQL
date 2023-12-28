@@ -4,7 +4,7 @@ import org.springframework.batch.item.file.mapping.FieldSetMapper;
 import org.springframework.batch.item.file.transform.FieldSet;
 import org.springframework.validation.BindException;
 
-import com.assignment.java.Payload.Request.CsvRequest;
+import com.assignment.java.DTO.Payload.Request.CsvRequest;
 
 public class CsvProductMapper implements FieldSetMapper<CsvRequest> {
 	

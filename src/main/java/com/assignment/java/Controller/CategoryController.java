@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.assignment.java.Payload.Request.CategoryRequest;
+import com.assignment.java.DTO.Payload.Request.CategoryRequest;
 import com.assignment.java.Service.ICategoryService;
 import com.assignment.java.Utils.AppConstants;
 
